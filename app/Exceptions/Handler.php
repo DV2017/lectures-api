@@ -46,6 +46,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+     /**
+     * Since there is no one exception to handle multiple api request exceptions,
+     * like file not found, model not found, route incorrect, etc...
+     * this approach is used. This does not make use of the request or the exception.
+     * Instead it just throws a simple standard user friendly response. 
+     * https://medium.com/@leandrorr/solving-the-error-route-login-not-defined-in-laravel-5-5-64de3ca974e
+     */
+        //return parent::render($request, $exception);
+        return response()->json([
+        'error_message' => 'This resource or page is not found.'
+        ], 404);
     }
 }
