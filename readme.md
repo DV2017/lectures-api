@@ -29,7 +29,7 @@
     <li>Retrieve data from the database using GET: 127.0.0.1:8000/api/lectures </li>
     Headers:- Authorization: Bearer api_token. (Insert the login api_token here.)<br>
     This will list all the data in the database table 'lectures'.<br>
-    If no authorization is sent along with the Get command, at this moment, a Route Login not defined message is shown.
+    If there is an exception, a simple user friendly error message is returned as response.
     <li>Finally logout using POST: 127.0.0.1:8000/api/logout</li>
     Headers:- Authorization: Bearer api_token. (Insert the login api_token here.)
 </ul>
